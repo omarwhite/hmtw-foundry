@@ -18,7 +18,7 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'features',
+          initial: 'biography',
         },
       ],
     });
