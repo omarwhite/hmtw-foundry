@@ -1,2 +1,2 @@
 # hmtw-foundry
-Foundry port of TTRPG system His Majesty the Worm.
+Foundry System for His Majesty The Worm by Joshua McCrowell. This project is unaffiliated with Joshua McCrowell or Exalted Funeral.
