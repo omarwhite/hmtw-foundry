@@ -28,6 +28,29 @@ export class HisMajestyTheWormActor extends Actor {
   prepareDerivedData() {
     const actorData = this;
     const flags = actorData.flags.hmtwfoundry || {};
+
+    this._prepareCharacterData(actorData);
+    this._prepareNpcData(actorData);
+  }
+
+  /**
+   * Prepare Character type specific data
+   */
+  _prepareCharacterData(actorData) {
+    if (actorData.type !== 'character') return;
+
+    // Make modifications to data here.
+    const systemData = actorData.system;
+  }
+
+  /**
+   * Prepare NPC type specific data.
+   */
+  _prepareNpcData(actorData) {
+    if (actorData.type !== 'npc') return;
+
+    // Make modifications to data here.
+    const systemData = actorData.system;
   }
 
   /**
