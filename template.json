@@ -4,26 +4,10 @@
     "templates": {
       "base": {
         "name": "",
-        "swords": {
-          "value": 0,
-          "min": 0,
-          "max": 10
-        },
-        "pentacles": {
-          "value": 0,
-          "min": 0,
-          "max": 10
-        },
-        "cups": {
-          "value": 0,
-          "min": 0,
-          "max": 10
-        },
-        "wands": {
-          "value": 0,
-          "min": 0,
-          "max": 10
-        }
+        "swords": 0,
+        "pentacles": 0,
+        "cups": 0,
+        "wands": 0
       }
     },
     "character": {
