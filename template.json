@@ -4,8 +4,6 @@
     "templates": {
       "base": {
         "name": "",
-        "kith": "",
-        "kin": "",
         "swords": {
           "value": 0,
           "min": 0,
@@ -30,7 +28,10 @@
     },
     "character": {
       "templates": ["base"],
+      "kith": "",
+      "kin": "",
       "bio": {
+        "backstory": "",
         "quest": "",
         "motifs": {
           "first": "",
@@ -108,8 +109,16 @@
     },
     "npc": {
       "templates": ["base"],
+      "creaturetype": "",
       "health": 0,
-      "defense": 0
+      "defense": 0,
+      "ldoom": "",
+      "gdoom": "",
+      "misc": {
+        "notes": "",
+        "likes": "",
+        "dislikes": ""
+      }
     }
   },
   "Item": {
@@ -153,6 +162,21 @@
       "templates": ["base"],
       "realm": "",
       "components": ""
+    },
+    "companion": {
+      "templates": ["base"],
+      "staggered": false,
+      "injured": false,
+      "commands": {
+        "value": 1,
+        "min": 1,
+        "max": 5
+      }
+    },
+    "bond": {
+      "templates": ["base"],
+      "bondedto": "",
+      "charged": false
     }
   }
 }
