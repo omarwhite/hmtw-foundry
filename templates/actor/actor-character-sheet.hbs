@@ -1,108 +1,238 @@
 <form class="{{cssClass}} {{actor.type}} flexcol" autocomplete="off">
 
-  {{!-- Sheet Header --}}
+  {{!-- Sheet Header (always visible elements) --}}
   <header class="sheet-header">
     <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
+
     <div class="header-fields">
-      <h1 class="charname"><input name="name" type="text" value="{{actor.name}}" placeholder="Name"/></h1>
-      {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-      use both the "grid" and "grid-Ncol" class where "N" can be any number
-      from 1 to 12 and will create that number of columns.  --}}
-      <div class="resources grid grid-3col">
+      <h1 class="charname"><input type="text" name="name" value="{{actor.name}}" placeholder="Name"/></h1>
 
-        {{!-- "flex-group-center" is also defined in the _grid.scss file
-        and it will add a small amount of padding, a border, and will
-        center all of its child elements content and text. --}}
+      <div class="resources grid grid-2col">
         <div class="resource flex-group-center">
-          <label for="system.health.value" class="resource-label">Health</label>
+          <h1 class="charname"><input type="text" name="system.kith" value="{{system.kith}}" placeholder="Kith" /></h1>
+        </div>
+
+        <div class="resource flex-group-center">
+          <h1 class="charname"><input type="text" name="system.kin" value="{{system.kin}}" placeholder="Kin" /></h1>
+        </div>
+      </div>
+
+      {{!-- Attributes --}}
+      <div class="resources grid grid-4col">
+
+        <div class="resource flex-group-center">
+          <label for="system.swords" class="resource-label">Swords</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.health.value" value="{{system.health.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.health.max" value="{{system.health.max}}" data-dtype="Number"/>
+            <input type="text" name="system.swords" value="{{system.swords}}" data-dtype="Number"/>
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.power.value" class="resource-label">Power</label>
+          <label for="system.pentacles" class="resource-label">Pentacles</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.power.value" value="{{system.power.value}}" data-dtype="Number"/>
-          <span> / </span>
-          <input type="text" name="system.power.max" value="{{system.power.max}}" data-dtype="Number"/>
+            <input type="text" name="system.pentacles" value="{{system.pentacles}}" data-dtype="Number" />
           </div>
         </div>
 
         <div class="resource flex-group-center">
-          <label for="system.attributes.level.value" class="resource-label">Level</label>
+          <label for="system.cups" class="resource-label">Cups</label>
           <div class="resource-content flexrow flex-center flex-between">
-          <input type="text" name="system.attributes.level.value" value="{{system.attributes.level.value}}" data-dtype="Number"/>
+            <input type="text" name="system.cups" value="{{system.cups}}" data-dtype="Number" />
           </div>
+        </div>
+
+        <div class="resource flex-group-center">
+          <label for="system.wands" class="resource-label">Wands</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.wands" value="{{system.wands}}" data-dtype="Number" />
+          </div>
+        </div>
+
+      </div>
+
+      {{!-- Light --}}
+      <div class="resources grid grid-4col">
+
+        <div class="resource flex-group-center">
+          <label for="system.supplyresources.light" class="resource-label">Light</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="checkbox" name="system.supplyresources.light.notched" value="{{system.supplyresources.light.notched}}" data-dtype="Boolean" />
+            <input type="text" name="system.supplyresources.light.flickers" value="{{system.supplyresources.light.flickers}}" data-dtype="Number" />
+          </div>
+        </div>
+      
+      </div>
+
+      {{!-- Status --}}
+      <div class="resource-content flexrow flex-center flex-between">
+
+        {{!-- Wounds - TODO figure out checkboxes --}}
+        <div class="resources grid grid-4col">
+
+          <div class="resource flex-group-center">
+            <label for="system.status.stressed" class="resource-label">Stressed</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.status.stressed" value="{{system.status.stressed}}" data-dtype="Boolean" />
+            </div>
+          </div>
+
+          <div class="resource flex-group-center">
+            <label for="system.status.staggered" class="resource-label">Staggered</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="checkbox" name="system.status.staggered" value="{{system.status.staggered}}" data-dtype="Boolean" />
+            </div>
+          </div>
+
+          <div class="resource flex-group-center">
+            <label for="system.status.injured" class="resource-label">Injured</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="checkbox" name="system.status.injured" value="{{system.status.injured}}" data-dtype="Boolean" />
+            </div>
+          </div>
+
+          <div class="resource flex-group-center">
+            <label for="system.status.deathsdoor" class="resource-label">Death's Door</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="checkbox" name="system.status.deathsdoor" value="{{system.status.deathsdoor}}" data-dtype="Boolean" />
+            </div>
+          </div>
+
+        </div>
+
+        {{!-- Resolve/Lore - TODO figure out if these should be multi-checkboxes --}}
+        <div class="resources grid grid-2col">
+        
+          <div class="resource flex-group-center">
+            <label for="system.status.resolve.value" class="resource-label">Resolve</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.status.resolve.value" value="{{system.status.resolve.value}}" data-dtype="Number" />
+            </div>
+          </div>
+        
+          <div class="resource flex-group-center">
+            <label for="system.status.lore.value" class="resource-label">Lore</label>
+            <div class="resource-content flexrow flex-center flex-between">
+              <input type="text" name="system.status.lore.value" value="{{system.status.lore.value}}" data-dtype="Number" />
+            </div>
+          </div>
+        
         </div>
 
       </div>
     </div>
   </header>
 
-  {{!-- Sheet Tab Navigation --}}
+  {{!-- Sheet Tab Navigation - reference template https://github.com/asacolips-projects/boilerplate/blob/main/templates/actor/actor-character-sheet.hbs --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     {{!-- Default tab is specified in actor-sheet.mjs --}}
-    <a class="item" data-tab="features">Features</a>
-    <a class="item" data-tab="description">Description</a>
-    <a class="item" data-tab="items">Items</a>
-    <a class="item" data-tab="spells">Spells</a>
-    <a class="item" data-tab="effects">Effects</a>
+    <a class="item" data-tab="biography">Biography</a>
+    <a class="item" data-tab="talents">Talents</a>
+    <a class="item" data-tab="supply-resources">Supply Resources</a>
+    {{!-- <a class="item" data-tab="spells">Spells</a> --}}
+    {{!-- <a class="item" data-tab="effects">Effects</a> --}}
   </nav>
 
   {{!-- Sheet Body --}}
   <section class="sheet-body">
 
-    {{!-- Owned Features Tab --}}
-    <div class="tab features" data-group="primary" data-tab="features">
-      <section class="grid grid-3col">
-        <aside class="sidebar">
-
-          {{!-- The grid classes are defined in scss/global/_grid.scss. To use,
-          use both the "grid" and "grid-Ncol" class where "N" can be any number
-          from 1 to 12 and will create that number of columns.  --}}
-          <div class="abilities flexcol">
-            {{#each system.abilities as |ability key|}}
-            <div class="ability flexrow flex-group-center">
-              <label for="system.abilities.{{key}}.value" class="resource-label rollable flexlarge align-left" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{localize (lookup @root.config.abilities key)}}</label>
-              <input type="text" name="system.abilities.{{key}}.value" value="{{ability.value}}" data-dtype="Number"/>
-              <span class="ability-mod rollable" data-roll="d20+@abilities.{{key}}.mod" data-label="{{localize (lookup @root.config.abilities key)}}">{{numberFormat ability.mod decimals=0 sign=true}}</span>
-            </div>
-            {{/each}}
-          </div>
-        </aside>
-
-        {{!-- For the main features list, span the right two columns --}}
-        <section class="main grid-span-2">
-          {{!-- This is a Handlebars partial. They're stored in the `/parts` folder next to this sheet, and defined in module/helpers/templates.mjs --}}
-          {{> "systems/hmtw-foundry/templates/actor/parts/actor-features.hbs"}}
-        </section>
-
-      </section>
-    </div>
-
     {{!-- Biography Tab --}}
-    <div class="tab biography" data-group="primary" data-tab="description">
-      {{!-- Editors must receive enriched text data from getData to properly handle rolls --}}
-      {{editor enrichedBiography target="system.biography" engine="prosemirror" button=true editable=editable}}
+    <div class="tab biography" data-group="primary" data-tab="biography">
+
+      <div class="resource-content flexcol flex-center flex-between">
+        <label for="system.bio.quest" class="resource-label">Quest</label>
+        {{editor system.bio.quest target="system.bio.quest" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+
+      <div class="resource-content flexcol flex-center flex-between">
+        <label {{!-- for="system.bio.motifs" --}} class="resource-label">Motifs</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.bio.motifs.first" class="resource-label">1.</label>
+          <input type="text" name="system.bio.motifs.first" value="{{system.bio.motifs.first}}" placeholder="" />
+        </div>
+        <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.bio.motifs.first" class="resource-label">1.</label>
+          <input type="text" name="system.bio.motifs.second" value="{{system.bio.motifs.second}}" placeholder="" />
+        </div>
+        <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.bio.motifs.first" class="resource-label">1.</label>
+          <input type="text" name="system.bio.motifs.third" value="{{system.bio.motifs.third}}" placeholder="" />
+        </div>
+      </div>
+
+      <div class="resource-content flexcol flex-center flex-between">
+        {{> "systems/boilerplate/templates/actor/parts/actor-bonds.hbs"}}
+      </div>
+
+      <div class="resource-content flexcol flex-center flex-between">
+        <label {{!-- for="system.bio.languages" --}} class="resource-label">Languages</label>
+        <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.bio.languages.first" class="resource-label">1.</label>
+          <input type="text" name="system.bio.languages.first" value="{{system.bio.languages.first}}" placeholder="" />
+        </div>
+        <div class="resource-content flexrow flex-center flex-between">
+          <label for="system.bio.languages.first" class="resource-label">1.</label>
+          <input type="text" name="system.bio.languages.second" value="{{system.bio.languages.second}}" placeholder="" />
+        </div>
+      </div>
+
+      <div class="resource-content flexcol flex-center flex-between">
+        <label for="system.bio.backstory" class="resource-label">Backstory</label>
+        {{editor system.bio.backstory target="system.bio.backstory" rollData=rollData button=true owner=owner editable=editable}}
+      </div>
+
     </div>
 
-    {{!-- Owned Items Tab --}}
-    <div class="tab items" data-group="primary" data-tab="items">
-       {{> "systems/hmtw-foundry/templates/actor/parts/actor-items.hbs"}}
+    {{!-- Talents Tab --}}
+    <div class="tab talents" data-group="primary" data-tab="talents">
+      {{> "systems/boilerplate/templates/actor/parts/actor-talents.hbs"}}
     </div>
 
-    {{!-- Owned Spells Tab --}}
-    <div class="tab spells" data-group="primary" data-tab="spells">
-      {{> "systems/hmtw-foundry/templates/actor/parts/actor-spells.hbs"}}
+    {{!-- Supply Resources Tab --}}
+    <div class="tab supply-resources" data-group="primary" data-tab="supply-resources">
+      {{!-- Belt - TODO move this to actor-pack.hbs and make it item-based --}}
+      {{!-- <div class="resources grid grid-4col">
+      
+        <div class="resource flex-group-center">
+          <label for="system.belt1.value" class="resource-label">I</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.belt1.value" value="{{system.belt1.value}}" placeholder="" />
+          </div>
+        </div>
+      
+        <div class="resource flex-group-center">
+          <label for="system.belt2.value" class="resource-label">II</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.belt2.value" value="{{system.belt2.value}}" placeholder="" />
+          </div>
+        </div>
+      
+        <div class="resource flex-group-center">
+          <label for="system.belt3.value" class="resource-label">III</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.belt3.value" value="{{system.belt3.value}}" placeholder="" />
+          </div>
+        </div>
+      
+        <div class="resource flex-group-center">
+          <label for="system.belt4.value" class="resource-label">IV</label>
+          <div class="resource-content flexrow flex-center flex-between">
+            <input type="text" name="system.belt4.value" value="{{system.belt4.value}}" placeholder="" />
+          </div>
+        </div>
+      
+      </div> --}}
+      {{> "systems/boilerplate/templates/actor/parts/actor-pack.hbs"}}
     </div>
+
+    {{!-- Spells Tab --}}
+    {{!-- <div class="tab spells" data-group="primary" data-tab="spells">
+      {{> "systems/boilerplate/templates/actor/parts/actor-spells.hbs"}}
+    </div> --}}
 
     {{!-- Active Effects Tab --}}
-    <div class="tab effects flexcol" data-group="primary" data-tab="effects">
+    {{!-- <div class="tab effects flexcol" data-group="primary" data-tab="effects">
       {{> "systems/hmtw-foundry/templates/actor/parts/actor-effects.hbs"}}
-    </div>
+    </div> --}}
 
   </section>
 </form>

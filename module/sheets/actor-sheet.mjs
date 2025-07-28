@@ -18,7 +18,7 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
         {
           navSelector: '.sheet-tabs',
           contentSelector: '.sheet-body',
-          initial: 'features',
+          initial: 'biography',
         },
       ],
     });
@@ -104,19 +104,10 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
   _prepareItems(context) {
     // Initialize containers.
     const gear = [];
-    const features = [];
-    const spells = {
-      0: [],
-      1: [],
-      2: [],
-      3: [],
-      4: [],
-      5: [],
-      6: [],
-      7: [],
-      8: [],
-      9: [],
-    };
+    const talents = [];
+    const spells = [];
+    const companions = [];
+    const bonds = [];
 
     // Iterate through items, allocating to containers
     for (let i of context.items) {
@@ -125,22 +116,30 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
       if (i.type === 'item') {
         gear.push(i);
       }
-      // Append to features.
-      else if (i.type === 'feature') {
-        features.push(i);
+      // Append to talents.
+      else if (i.type === 'talent') {
+        talents.push(i);
       }
       // Append to spells.
       else if (i.type === 'spell') {
-        if (i.system.spellLevel != undefined) {
-          spells[i.system.spellLevel].push(i);
-        }
+        spells.push(i);
+      }
+      // Append to companions.
+      else if (i.type === 'companion') {
+        companions.push(i);
+      }
+      // Append to bonds.
+      else if (i.type === 'bond') {
+        bonds.push(i);
       }
     }
 
     // Assign and return
     context.gear = gear;
-    context.features = features;
+    context.talents = talents;
     context.spells = spells;
+    context.companions = companions;
+    context.bonds = bonds;
   }
 
   /* -------------------------------------------- */
