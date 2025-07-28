@@ -78,11 +78,7 @@
         },
         "light": {
           "inslot": "",
-          "notches": {
-            "value": 0,
-            "min": 0,
-            "max": 1
-          },
+          "notched": false,
           "flickers": {
             "value": 0,
             "min": 0,
