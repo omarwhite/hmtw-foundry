@@ -1,8 +1,166 @@
 {
   "Actor": {
-    "types": ["character", "npc"]
+    "types": ["character", "npc"],
+    "templates": {
+      "base": {
+        "name": "",
+        "swords": 0,
+        "pentacles": 0,
+        "cups": 0,
+        "wands": 0
+      }
+    },
+    "character": {
+      "templates": ["base"],
+      "kith": "",
+      "kin": "",
+      "bio": {
+        "backstory": "",
+        "quest": "",
+        "motifs": {
+          "first": "",
+          "second": "",
+          "third": ""
+        },
+        "languages": {
+          "first": "",
+          "second": ""
+        }
+      },
+      "status": {
+        "stressed": false,
+        "staggered": false,
+        "injured": false,
+        "deathsdoor": false,
+        "resolve": {
+          "value": 0,
+          "min": 0,
+          "max": 4
+        },
+        "lore": {
+          "value": 0,
+          "min": 0,
+          "max": 4
+        }
+      },
+      "supplyresources": {
+        "rhand": {
+          "inslot": "",
+          "notches": {
+            "value": 0,
+            "min": 0,
+            "max": 3
+          }
+        },
+        "helm": {
+          "inslot": "",
+          "notches": {
+            "value": 0,
+            "min": 0,
+            "max": 1
+          }
+        },
+        "armor": {
+          "inslot": "",
+          "notches": {
+            "value": 0,
+            "min": 0,
+            "max": 3
+          }
+        },
+        "lhand": {
+          "inslot": "",
+          "notches": {
+            "value": 0,
+            "min": 0,
+            "max": 3
+          }
+        },
+        "light": {
+          "inslot": "",
+          "notches": {
+            "value": 0,
+            "min": 0,
+            "max": 1
+          },
+          "flickers": {
+            "value": 0,
+            "min": 0,
+            "max": 4
+          }
+        }
+      }
+    },
+    "npc": {
+      "templates": ["base"],
+      "creaturetype": "",
+      "health": 0,
+      "defense": 0,
+      "ldoom": "",
+      "gdoom": "",
+      "misc": {
+        "notes": "",
+        "likes": "",
+        "dislikes": ""
+      }
+    }
   },
   "Item": {
-    "types": ["item", "feature", "spell"]
+    "types": ["item", "talent", "spell", "companion", "bond"],
+    "templates": {
+      "base": {
+        "name": "",
+        "description": ""
+      },
+      "basetalent": {
+        "wounded": false
+      }
+    },
+    "item": {
+      "templates": ["base"],
+      "value": ["shit", "mid", "fancy"],
+      "oversized": false,
+      "slots": {
+        "value": 1,
+        "min": 1,
+        "max": 3
+      },
+      "qty": 1
+    },
+    "talent": {
+      "templates": ["base", "basetalent"],
+      "types": ["kin", "arete", "path"],
+      "arete": {
+        "conditions": {
+          "value": 0,
+          "min": 0,
+          "max": 3
+        } 
+      },
+      "path": {
+        "xpspent": 0,
+        "mastered": false
+      }
+    },
+    "spell": {
+      "templates": ["base"],
+      "realm": "",
+      "components": ""
+    },
+    "companion": {
+      "templates": ["base"],
+      "staggered": false,
+      "injured": false,
+      "commands": {
+        "value": 1,
+        "min": 1,
+        "max": 5
+      }
+    },
+    "bond": {
+      "templates": ["base"],
+      "bondedto": "",
+      "charged": false
+    }
   }
 }
