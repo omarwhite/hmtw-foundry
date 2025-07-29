@@ -16,3 +16,6 @@ The His Majesty The Worm Foundry system updates are managed via releases. To upd
     1. Attach the `system.json` and `release.zip` binaries you saved earlier.
     1. Click "Publish release".
 1. In the Foundry setup page, click the refresh button ("Perform Update If Available") on the system.
+1. The next time you launch your world, Foundry will alert you that the world needs to be migrated to a new system version and prompt you to create a backup.
+    1. If it's a real world, take a backup. Click "Migrate".
+    1. If it's a test world, there's probably no need to backup. Uncheck the box and click "Migrate".
