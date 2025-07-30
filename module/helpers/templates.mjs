@@ -6,6 +6,7 @@
 export const preloadHandlebarsTemplates = async function () {
   return loadTemplates([
     // Actor partials.
+    'systems/hmtw-foundry/templates/actor/parts/actor-bio.hbs',
     'systems/hmtw-foundry/templates/actor/parts/actor-bonds.hbs',
     'systems/hmtw-foundry/templates/actor/parts/actor-effects.hbs',
     'systems/hmtw-foundry/templates/actor/parts/actor-pack.hbs',

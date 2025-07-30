@@ -137,49 +137,7 @@
 
     {{!-- Biography Tab --}}
     <div class="tab biography" data-group="primary" data-tab="biography">
-
-      <div class="resource-content flexcol flex-center flex-between">
-        <label for="system.bio.quest" class="resource-label">Quest</label>
-        {{editor system.bio.quest target="system.bio.quest" rollData=rollData button=true owner=owner editable=editable}}
-      </div>
-
-      <div class="resource-content flexcol flex-center flex-between">
-        <label {{!-- for="system.bio.motifs" --}} class="resource-label">Motifs</label>
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.bio.motifs.first" class="resource-label">1.</label>
-          <input type="text" name="system.bio.motifs.first" value="{{system.bio.motifs.first}}" placeholder="" />
-        </div>
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.bio.motifs.first" class="resource-label">2.</label>
-          <input type="text" name="system.bio.motifs.second" value="{{system.bio.motifs.second}}" placeholder="" />
-        </div>
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.bio.motifs.first" class="resource-label">3.</label>
-          <input type="text" name="system.bio.motifs.third" value="{{system.bio.motifs.third}}" placeholder="" />
-        </div>
-      </div>
-
-      <div class="resource-content flexcol flex-center flex-between">
-        {{> "systems/hmtw-foundry/templates/actor/parts/actor-bonds.hbs"}}
-      </div>
-
-      <div class="resource-content flexcol flex-center flex-between">
-        <label {{!-- for="system.bio.languages" --}} class="resource-label">Languages</label>
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.bio.languages.first" class="resource-label">1.</label>
-          <input type="text" name="system.bio.languages.first" value="{{system.bio.languages.first}}" placeholder="" />
-        </div>
-        <div class="resource-content flexrow flex-center flex-between">
-          <label for="system.bio.languages.first" class="resource-label">2.</label>
-          <input type="text" name="system.bio.languages.second" value="{{system.bio.languages.second}}" placeholder="" />
-        </div>
-      </div>
-
-      <div class="resource-content flexcol flex-center flex-between">
-        <label for="system.bio.backstory" class="resource-label">Backstory</label>
-        {{editor system.bio.backstory target="system.bio.backstory" rollData=rollData button=true owner=owner editable=editable}}
-      </div>
-
+      {{> "systems/hmtw-foundry/templates/actor/parts/actor-bio.hbs"}}
     </div>
 
     {{!-- Talents Tab --}}
