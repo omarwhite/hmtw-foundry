@@ -7,15 +7,15 @@ export default class HisMajestyTheWormActorBase extends HisMajestyTheWormDataMod
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = {};
 
-    schema.health = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 10, min: 0 }),
-      max: new fields.NumberField({ ...requiredInteger, initial: 10 })
-    });
-    schema.power = new fields.SchemaField({
-      value: new fields.NumberField({ ...requiredInteger, initial: 5, min: 0 }),
-      max: new fields.NumberField({ ...requiredInteger, initial: 5 })
-    });
-    schema.biography = new fields.StringField({ required: true, blank: true }); // equivalent to passing ({initial: ""}) for StringFields
+    // Reference https://github.com/asacolips-projects/boilerplate/blob/main/src/datamodels/module/data/base-actor.mjs
+
+    // TODO: I don't think we need a name field in the template, because there's an inherent actor.name field already
+    schema.name = new fields.StringField({ required: true, blank: true }); // equivalent to passing ({initial: ""}) for StringFields
+
+    schema.swords = new fields.NumberField({ ...requiredInteger, initial: 0 });
+    schema.pentacles = new fields.NumberField({ ...requiredInteger, initial: 0 });
+    schema.cups = new fields.NumberField({ ...requiredInteger, initial: 0 });
+    schema.wands = new fields.NumberField({ ...requiredInteger, initial: 0 });
 
     return schema;
   }

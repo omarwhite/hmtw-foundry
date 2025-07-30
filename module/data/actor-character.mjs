@@ -7,46 +7,52 @@ export default class HisMajestyTheWormCharacter extends HisMajestyTheWormActorBa
     const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
-    schema.attributes = new fields.SchemaField({
-      level: new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 1 })
-      }),
+    schema.kith = new fields.StringField({ required: true, blank: true });
+    schema.kin = new fields.StringField({ required: true, blank: true });
+
+    // bio
+    schema.bio.backstory = new fields.StringField({ required: true, blank: true });
+    schema.bio.quest = new fields.StringField({ required: true, blank: true });
+    ['first', 'second', 'third'].forEach((pos) => {
+      schema.bio.motifs[pos] = new fields.StringField({ required: true, blank: true });
+    });
+    ['first', 'second'].forEach((pos) => {
+      schema.bio.languages[pos] = new fields.StringField({ required: true, blank: true });
     });
 
-    // Iterate over ability names and create a new SchemaField for each.
-    schema.abilities = new fields.SchemaField(Object.keys(CONFIG.HMTW_FOUNDRY.abilities).reduce((obj, ability) => {
-      obj[ability] = new fields.SchemaField({
-        value: new fields.NumberField({ ...requiredInteger, initial: 10, min: 0 }),
+    // status
+    ['stressed', 'staggered', 'injured', 'deathsdoor'].forEach((type) => {
+      schema.status[type] = new fields.BooleanField({ required: true });
+    });
+    ['resolve', 'lore'].forEach((type) => {
+      schema.status[type] = new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 });
+    });
+
+    // supply resources
+    ['rhand', 'lhand', 'armor'].forEach((type) => {
+      schema.supplyresources[type] = fields.SchemaField({
+        inslot: new fields.StringField({ required: true, blank: true }),
+        notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
       });
-      return obj;
-    }, {}));
+    });
+    schema.supplyresources.helm = fields.SchemaField({
+      inslot: new fields.StringField({ required: true, blank: true }),
+      notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 1 }),
+    });
+    schema.supplyresources.light = fields.SchemaField({
+      inslot: new fields.StringField({ required: true, blank: true }),
+      notched: new fields.BooleanField({ required: true }),
+      flickers: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 }),
+    });
 
     return schema;
   }
 
   prepareDerivedData() {
-    // Loop through ability scores, and add their modifiers to our sheet output.
-    for (const key in this.abilities) {
-      // Calculate the modifier using d20 rules.
-      this.abilities[key].mod = Math.floor((this.abilities[key].value - 10) / 2);
-      // Handle ability label localization.
-      this.abilities[key].label = game.i18n.localize(CONFIG.HMTW_FOUNDRY.abilities[key]) ?? key;
-    }
+    
   }
 
   getRollData() {
-    const data = {};
-
-    // Copy the ability scores to the top level, so that rolls can use
-    // formulas like `@str.mod + 4`.
-    if (this.abilities) {
-      for (let [k,v] of Object.entries(this.abilities)) {
-        data[k] = foundry.utils.deepClone(v);
-      }
-    }
-
-    data.lvl = this.attributes.level.value;
-
-    return data
+    return {}
   }
 }

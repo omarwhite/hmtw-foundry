@@ -76,6 +76,9 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
       }
     );
 
+    // Add roll data for TinyMCE editors.
+    context.rollData = context.actor.getRollData();
+
     // Prepare active effects
     context.effects = prepareActiveEffectCategories(
       // A generator that returns all effects stored on the actor
