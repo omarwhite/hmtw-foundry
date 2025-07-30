@@ -11,7 +11,7 @@ Of highest priority is Adventurer Sheet & NPC management functionality.
 
 ## Adventurer Sheet 
 
-The Adventurer Sheet will be split into four pages \+ a persistent tab, detailed further below.
+The Adventurer Sheet will be split into five pages \+ a persistent tab, detailed further below.
 
 ### Persistent Tab
 
@@ -57,6 +57,15 @@ The Inventory Page contains information regarding carried items, such as;
 The Spells Page contains information regarding magical spells, such as;
 
 * Known Spells
+
+### Conditions & Effects Page
+
+The Conditions & Effects Page contains information regarding effects that help or hinder the Adventurer; such as:
+
+* Blessings  
+* Curses  
+* Conditions  
+* Afflictions
 
 ## Guild Management
 
