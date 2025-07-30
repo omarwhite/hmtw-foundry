@@ -31,32 +31,32 @@ export default class HisMajestyTheWormCharacter extends HisMajestyTheWormActorBa
       staggered: new fields.BooleanField({ required: true }),
       injured: new fields.BooleanField({ required: true }),
       deathsdoor: new fields.BooleanField({ required: true }),
-      resolve: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 }),
-      lore: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 }),
+      resolve: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
+      lore: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
     });
 
     // supply resources
     schema.supplyresources = new fields.SchemaField({
       rhand: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
-        notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
+        notches: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 3 }),
       }),
       lhand: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
-        notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
+        notches: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 3 }),
       }),
       armor: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
-        notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 3 }),
+        notches: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 3 }),
       }),
       helm: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
-        notches: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 1 }),
+        notches: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 1 }),
       }),
       light: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
         notched: new fields.BooleanField({ required: true }),
-        flickers: new fields.NumberField({ ...requiredInteger, initial: 0, min: 0, max: 4 }),
+        flickers: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
       }),
     });
 
