@@ -1,12 +1,14 @@
 <div class="resource-content flexcol flex-center flex-between">
   <label for="system.bio.quest" class="resource-label">Quest</label>
-  {{editor
-    enrichedQuest
-    target='system.bio.quest'
-    engine='prosemirror'
-    button=true
-    editable=editable
-  }}
+  <div class="small-edit">
+    {{editor
+      system.bio.quest
+      target='system.bio.quest'
+      engine='prosemirror'
+      button=true
+      editable=editable
+    }}
+  </div>
 </div>
 
 <div class="resource-content flexcol flex-center flex-between">
@@ -43,11 +45,13 @@
 
 <div class="resource-content flexcol flex-center flex-between">
   <label for="system.bio.backstory" class="resource-label">Backstory</label>
+  <div class="small-edit">
     {{editor
-        enrichedBackstory
-        target='system.bio.backstory'
-        engine='prosemirror'
-        button=true
-        editable=editable
+      system.bio.backstory
+      target='system.bio.backstory'
+      engine='prosemirror'
+      button=true
+      editable=editable
     }}
+  </div>
 </div>

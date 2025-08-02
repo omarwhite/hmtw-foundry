@@ -13,7 +13,7 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['hmtw-foundry', 'sheet', 'actor'],
       width: 600,
-      height: 600,
+      height: 800,
       tabs: [
         {
           navSelector: '.sheet-tabs',
@@ -59,30 +59,6 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
     if (actorData.type == 'npc') {
       this._prepareItems(context);
     }
-
-    // Enrichment turns text like `[[/r 1d20]]` into buttons
-    context.enrichedQuest = await TextEditor.enrichHTML(
-      this.actor.system.bio.quest,
-      {
-        // Whether to show secret blocks in the finished html
-        secrets: this.document.isOwner,
-        // Necessary in v11, can be removed in v12
-        async: true,
-        // Data to fill in for inline rolls
-        rollData: this.actor.getRollData(),
-        // Relative UUID resolution
-        relativeTo: this.actor,
-      }
-    );
-    context.enrichedBackstory = await TextEditor.enrichHTML(
-      this.actor.system.bio.backstory,
-      {
-        secrets: this.document.isOwner,
-        async: true,
-        rollData: this.actor.getRollData(),
-        relativeTo: this.actor,
-      }
-    );
 
     // Add roll data for TinyMCE editors.
     context.rollData = context.actor.getRollData();

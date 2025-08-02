@@ -39,9 +39,16 @@
 }
 
 .sheet-body,
+.sheet-body .editor,
 .sheet-body .tab,
 .sheet-body .tab .editor {
   height: 100%;
+}
+
+.sheet-body .small-edit,
+.sheet-body .tab .small-edit,
+.sheet-body .tab .small-edit .editor {
+  height: 150px;
 }
 
 .tox {

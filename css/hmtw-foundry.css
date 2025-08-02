@@ -239,9 +239,15 @@
   flex: 0;
 }
 .hmtw-foundry .sheet-body,
+.hmtw-foundry .sheet-body .editor,
 .hmtw-foundry .sheet-body .tab,
 .hmtw-foundry .sheet-body .tab .editor {
   height: 100%;
+}
+.hmtw-foundry .sheet-body .small-edit,
+.hmtw-foundry .sheet-body .tab .small-edit,
+.hmtw-foundry .sheet-body .tab .small-edit .editor {
+  height: 150px;
 }
 .hmtw-foundry .tox .tox-editor-container {
   background: #fff;
