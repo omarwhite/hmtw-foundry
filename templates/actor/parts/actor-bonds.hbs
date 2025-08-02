@@ -1,6 +1,8 @@
 <ol class='items-list'>
   <li class='item flexrow items-header'>
     <div class='item-name'>{{localize 'Bonds'}}</div>
+    <div class='item-info'>{{localize 'Bond Type'}}</div>
+    <div class='item-info'>{{localize 'Charged?'}}</div>
     <div class='item-controls'>
       <a
         class='item-control item-create'
@@ -24,6 +26,10 @@
           />
         </div>
         <h4>{{bond.name}}</h4>
+      </div>
+      <div class='item-info item-prop'>{{bond.system.bondtype}}</div>
+      <div class='item-info item-prop'>
+        <input type='checkbox' name='bond.system.charged' {{isChecked bond.system.charged}} disabled="disabled" />
       </div>
       <div class='item-controls'>
         <a

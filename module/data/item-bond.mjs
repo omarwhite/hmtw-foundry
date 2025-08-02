@@ -6,7 +6,7 @@ export default class HisMajestyTheWormBond extends HisMajestyTheWormItemBase {
     const fields = foundry.data.fields;
     const schema = super.defineSchema();
 
-    schema.type = new fields.StringField({ required: true, blank: true });
+    schema.bondtype = new fields.StringField({ required: true, blank: true });
     schema.charged = new fields.BooleanField({ initial: false });
 
     return schema;

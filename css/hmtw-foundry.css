@@ -359,6 +359,10 @@
   flex: 0 0 200px;
   padding: 0 8px;
 }
+.hmtw-foundry .item-info {
+  flex: 1 0 30px;
+  padding: 0 8px;
+}
 .hmtw-foundry .effects .item .effect-source,
 .hmtw-foundry .effects .item .effect-duration,
 .hmtw-foundry .effects .item .effect-controls {
