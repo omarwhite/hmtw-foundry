@@ -32,8 +32,10 @@
     },
     "Item": {
       "item": "Item",
-      "feature": "Feature",
-      "spell": "Spell"
+      "talent": "Talent",
+      "spell": "Spell",
+      "bond": "Bond",
+      "companion": "Companion"
     }
   }
 }
