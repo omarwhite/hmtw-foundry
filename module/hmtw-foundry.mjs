@@ -79,9 +79,13 @@ Hooks.once('init', function () {
 /*  Handlebars Helpers                          */
 /* -------------------------------------------- */
 
-// If you need to add Handlebars helpers, here is a useful example:
 Handlebars.registerHelper('toLowerCase', function (str) {
   return str.toLowerCase();
+});
+
+Handlebars.registerHelper("isChecked", function (value) {
+  if (value == undefined) { return ""; }
+  return value ? "checked" : "";
 });
 
 /* -------------------------------------------- */

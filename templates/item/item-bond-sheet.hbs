@@ -18,21 +18,11 @@
       <div class='grid grid-2col'>
         <div class='resource'>
           <label class='resource-label'>Bond Type</label>
-          <input
-            type='text'
-            name='system.type'
-            value='{{system.type}}'
-            placeholder="Ally"
-          />
+          <input type='text' name='system.type' value='{{system.type}}' placeholder="Ally" />
         </div>
         <div class='resource'>
-          <label class='resource-label'>Wounded:</label>
-          <input
-            type='checkbox'
-            name='system.wounded'
-            value='{{system.wounded}}'
-            data-dtype="Boolean"
-          />
+          <label class='resource-label'>Charged:</label>
+          <input type='checkbox' name='system.charged' {{isChecked system.charged}} />
         </div>
       </div>
     </div>

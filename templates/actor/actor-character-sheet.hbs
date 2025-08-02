@@ -56,7 +56,7 @@
         <div class="resource flex-group-center">
           <label for="system.supplyresources.light" class="resource-label">Light</label>
           <div class="resource-content flexrow flex-center flex-between">
-            <input type="checkbox" name="system.supplyresources.light.notched" value="{{system.supplyresources.light.notched}}" data-dtype="Boolean" />
+            <input type="checkbox" name="system.supplyresources.light.notched" {{isChecked system.supplyresources.light.notched}} />
             <input type="number" name="system.supplyresources.light.flickers" value="{{system.supplyresources.light.flickers}}" data-dtype="Number" />
           </div>
         </div>
@@ -66,34 +66,34 @@
       {{!-- Status --}}
       <div class="resource-content flexrow flex-center flex-between">
 
-        {{!-- Wounds - TODO figure out checkboxes --}}
+        {{!-- Wounds --}}
         <div class="resources grid grid-4col">
 
           <div class="resource flex-group-center">
             <label for="system.status.stressed" class="resource-label">Stressed</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.stressed" value="{{system.status.stressed}}" data-dtype="Boolean" />
+              <input type="checkbox" name="system.status.stressed" {{isChecked system.status.stressed}} />
             </div>
           </div>
-
+          
           <div class="resource flex-group-center">
             <label for="system.status.staggered" class="resource-label">Staggered</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.staggered" value="{{system.status.staggered}}" data-dtype="Boolean" />
+              <input type="checkbox" name="system.status.staggered" {{isChecked system.status.staggered}} />
             </div>
           </div>
-
+          
           <div class="resource flex-group-center">
             <label for="system.status.injured" class="resource-label">Injured</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.injured" value="{{system.status.injured}}" data-dtype="Boolean" />
+              <input type="checkbox" name="system.status.injured" {{isChecked system.status.injured}} />
             </div>
           </div>
-
+          
           <div class="resource flex-group-center">
             <label for="system.status.deathsdoor" class="resource-label">Death's Door</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.deathsdoor" value="{{system.status.deathsdoor}}" data-dtype="Boolean" />
+              <input type="checkbox" name="system.status.deathsdoor" {{isChecked system.status.deathsdoor}} />
             </div>
           </div>
 
