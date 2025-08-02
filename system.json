@@ -10,6 +10,9 @@
     {
       "name": "Raspberrygummi",
       "discord": "raspberrygummi"
+    },
+    {
+      "name": "Taha Bokhari"
     }
   ],
   "url": "https://github.com/omarwhite/hmtw-foundry",
@@ -24,7 +27,7 @@
       "thumbnail": "systems/hmtw-foundry/assets/whiteworm.jpg"
     }
   ],
-  "version": "0.0.9",
+  "version": "0.0.10",
   "compatibility": {
     "minimum": 11,
     "verified": "11.315"
