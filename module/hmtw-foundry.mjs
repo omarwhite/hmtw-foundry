@@ -48,8 +48,10 @@ Hooks.once('init', function () {
   CONFIG.Item.documentClass = HisMajestyTheWormItem;
   CONFIG.Item.dataModels = {
     item: models.HisMajestyTheWormItem,
-    feature: models.HisMajestyTheWormFeature,
-    spell: models.HisMajestyTheWormSpell
+    talent: models.HisMajestyTheWormTalent,
+    bond: models.HisMajestyTheWormBond,
+    spell: models.HisMajestyTheWormSpell,
+    companion: models.HisMajestyTheWormCompanion
   }
 
   // Active Effects are never copied to the Actor,
