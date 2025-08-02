@@ -60,10 +60,9 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
       this._prepareItems(context);
     }
 
-    // Enrich biography info for display
     // Enrichment turns text like `[[/r 1d20]]` into buttons
-    context.enrichedBiography = await TextEditor.enrichHTML(
-      this.actor.system.biography,
+    context.enrichedQuest = await TextEditor.enrichHTML(
+      this.actor.system.bio.quest,
       {
         // Whether to show secret blocks in the finished html
         secrets: this.document.isOwner,
@@ -72,6 +71,15 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
         // Data to fill in for inline rolls
         rollData: this.actor.getRollData(),
         // Relative UUID resolution
+        relativeTo: this.actor,
+      }
+    );
+    context.enrichedBackstory = await TextEditor.enrichHTML(
+      this.actor.system.bio.backstory,
+      {
+        secrets: this.document.isOwner,
+        async: true,
+        rollData: this.actor.getRollData(),
         relativeTo: this.actor,
       }
     );
