@@ -8,9 +8,7 @@ export default class HisMajestyTheWormActorBase extends HisMajestyTheWormDataMod
     const schema = {};
 
     // Reference https://github.com/asacolips-projects/boilerplate/blob/main/src/datamodels/module/data/base-actor.mjs
-
-    // TODO: I don't think we need a name field in the template, because there's an inherent actor.name field already
-    schema.name = new fields.StringField({ required: true, blank: true }); // equivalent to passing ({initial: ""}) for StringFields
+    // Field docs: https://foundryvtt.com/api/modules/foundry.data.fields.html
 
     schema.swords = new fields.NumberField({ ...requiredInteger, initial: 0 });
     schema.pentacles = new fields.NumberField({ ...requiredInteger, initial: 0 });

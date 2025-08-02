@@ -27,10 +27,10 @@ export default class HisMajestyTheWormCharacter extends HisMajestyTheWormActorBa
       
     // status
     schema.status = new fields.SchemaField({
-      stressed: new fields.BooleanField({ required: true }),
-      staggered: new fields.BooleanField({ required: true }),
-      injured: new fields.BooleanField({ required: true }),
-      deathsdoor: new fields.BooleanField({ required: true }),
+      stressed: new fields.BooleanField({ initial: false }),
+      staggered: new fields.BooleanField({ initial: false }),
+      injured: new fields.BooleanField({ initial: false }),
+      deathsdoor: new fields.BooleanField({ initial: false }),
       resolve: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
       lore: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
     });
@@ -55,7 +55,7 @@ export default class HisMajestyTheWormCharacter extends HisMajestyTheWormActorBa
       }),
       light: new fields.SchemaField({
         inslot: new fields.StringField({ required: true, blank: true }),
-        notched: new fields.BooleanField({ required: true }),
+        notched: new fields.BooleanField({ initial: false }),
         flickers: new fields.NumberField({ integer: true, initial: 0, min: 0, max: 4 }),
       }),
     });
