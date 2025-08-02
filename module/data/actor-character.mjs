@@ -4,7 +4,6 @@ export default class HisMajestyTheWormCharacter extends HisMajestyTheWormActorBa
 
   static defineSchema() {
     const fields = foundry.data.fields;
-    const requiredInteger = { required: true, nullable: false, integer: true };
     const schema = super.defineSchema();
 
     schema.kith = new fields.StringField({ required: true, blank: true });
