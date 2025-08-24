@@ -3,6 +3,8 @@ import {
   prepareActiveEffectCategories,
 } from '../helpers/effects.mjs';
 
+import { gearLocationOptions, gearLocationSelect } from '../helpers/constants.mjs';
+
 /**
  * Extend the basic ItemSheet with some very simple modifications
  * @extends {ItemSheet}
@@ -70,6 +72,15 @@ export class HisMajestyTheWormItemSheet extends ItemSheet {
 
     // Prepare active effects for easier access
     context.effects = prepareActiveEffectCategories(this.item.effects);
+
+    // Setup values specific to item type
+    switch (context.data.type) {
+      case "item":
+        context.locationOptions = gearLocationSelect;
+        break;
+      default:
+        break;
+    }
 
     return context;
   }

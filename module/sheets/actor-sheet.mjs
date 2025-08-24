@@ -90,7 +90,20 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
    */
   _prepareItems(context) {
     // Initialize containers.
-    const gear = [];
+    const gear = {
+      pack: [],
+      belt: [],
+      lhand: [],
+      rhand: [],
+    };
+    const usedSlots = {
+      pack: 0,
+      belt: 0,
+    }
+    const maxSlots = {
+      pack: 21,
+      belt: 4,
+    }
     const talents = [];
     const spells = [];
     const companions = [];
@@ -101,7 +114,25 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
       i.img = i.img || Item.DEFAULT_ICON;
       // Append to gear.
       if (i.type === 'item') {
-        gear.push(i);
+        switch (i.system.location) {
+          case "pack":
+            gear.pack.push(i);
+            usedSlots.pack += i.system.slots;
+            break;
+          case "belt":
+            gear.belt.push(i);
+            usedSlots.belt += i.system.slots;
+            break;
+          case "lhand":
+            gear.lhand.push(i);
+            break;
+          case "rhand":
+            gear.rhand.push(i);
+            break;
+          default:
+            gear.pack.push(i);
+            break;
+        }
       }
       // Append to talents.
       else if (i.type === 'talent') {
@@ -123,6 +154,8 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
 
     // Assign and return
     context.gear = gear;
+    context.usedSlots = usedSlots;
+    context.maxSlots = maxSlots;
     context.talents = talents;
     context.spells = spells;
     context.companions = companions;
