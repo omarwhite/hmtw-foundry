@@ -238,6 +238,9 @@
 .hmtw-foundry .sheet-tabs {
   flex: 0;
 }
+.hmtw-foundry .editor-container {
+  min-height: 50px;
+}
 .hmtw-foundry .sheet-body,
 .hmtw-foundry .sheet-body .editor,
 .hmtw-foundry .sheet-body .tab,
@@ -247,7 +250,14 @@
 .hmtw-foundry .sheet-body .small-edit,
 .hmtw-foundry .sheet-body .tab .small-edit,
 .hmtw-foundry .sheet-body .tab .small-edit .editor {
-  height: 150px;
+  min-height: 40px;
+  height: auto;
+  max-height: 150px;
+  overflow: auto;
+}
+.hmtw-foundry .view-edit,
+.hmtw-foundry .view-edit .editor {
+  height: auto;
 }
 .hmtw-foundry .tox .tox-editor-container {
   background: #fff;
