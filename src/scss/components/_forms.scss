@@ -38,6 +38,12 @@
   flex: 0;
 }
 
+// Editor styles
+
+.editor-container {
+  min-height: 50px;
+}
+
 .sheet-body,
 .sheet-body .editor,
 .sheet-body .tab,
@@ -48,7 +54,15 @@
 .sheet-body .small-edit,
 .sheet-body .tab .small-edit,
 .sheet-body .tab .small-edit .editor {
-  height: 150px;
+  min-height: 40px;
+  height: auto;
+  max-height: 150px;
+  overflow: auto;
+}
+
+.view-edit,
+.view-edit .editor {
+  height: auto;
 }
 
 .tox {
