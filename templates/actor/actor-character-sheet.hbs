@@ -2,122 +2,81 @@
 
   {{!-- Sheet Header (always visible elements) --}}
   <header class="sheet-header">
-    <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}" height="100" width="100"/>
-
-    <div class="header-fields">
-      <h1 class="charname"><input type="text" name="name" value="{{actor.name}}" placeholder="Name"/></h1>
-
-      <div class="resources grid grid-2col">
-        <div class="resource flex-group-center">
-          <h1 class="charname"><input type="text" name="system.kith" value="{{system.kith}}" placeholder="Kith" /></h1>
+    <div class="resources grid grid-2col">
+      {{!-- LEFT SIDE: STATUSES --}}
+      <div class="header-fields">
+        <div class="resources grid grid-2col">
+          <img class="profile-img" src="{{actor.img}}" data-edit="img" title="{{actor.name}}"/>
+          
+          <div class="resource flex-group-left">
+            <h1 class="biginput" id="kith"><input type="text" name="system.kith" value="{{system.kith}}" placeholder="Kith" /></h1>
+            <h1 class="biginput" id="kin"><input type="text" name="system.kin" value="{{system.kin}}" placeholder="Kin" /></h1>
+            
+            <div class="smallinput resources" id="stressed">
+              <label for="system.status.stressed" class="resource-label">Stressed</label>
+              <div class="resource-content">
+                <input type="checkbox" name="system.status.stressed" {{isChecked system.status.stressed}} />
+              </div>
+            </div>
+            
+            <div class="smallinput resources" id="staggered">
+              <label for="system.status.staggered" class="resource-label">Staggered</label>
+              <div class="resource-content">
+                <input type="checkbox" name="system.status.staggered" {{isChecked system.status.staggered}} />
+              </div>
+            </div>
+            
+            <div class="smallinput resources" id="injured">
+              <label for="system.status.injured" class="resource-label">Injured</label>
+              <div class="resource-content">
+                <input type="checkbox" name="system.status.injured" {{isChecked system.status.injured}} />
+              </div>
+            </div>
+            
+            <div class="smallinput resources" id="deathsdoor">
+              <label for="system.status.deathsdoor" class="resource-label">Death's Door</label>
+              <div class="resource-content">
+                <input type="checkbox" name="system.status.deathsdoor" {{isChecked system.status.deathsdoor}} />
+              </div>
+            </div>
+          </div>
         </div>
-
-        <div class="resource flex-group-center">
-          <h1 class="charname"><input type="text" name="system.kin" value="{{system.kin}}" placeholder="Kin" /></h1>
-        </div>
+        <h1 class="biginput" id="charname"><input type="text" name="name" value="{{actor.name}}" placeholder="Name"/></h1>
       </div>
 
-      {{!-- Attributes --}}
-      <div class="resources grid grid-4col">
-
-        <div class="resource flex-group-center">
-          <label for="system.swords" class="resource-label">Swords</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="number" name="system.swords" value="{{system.swords}}" data-dtype="Number"/>
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.pentacles" class="resource-label">Pentacles</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="number" name="system.pentacles" value="{{system.pentacles}}" data-dtype="Number" />
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.cups" class="resource-label">Cups</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="number" name="system.cups" value="{{system.cups}}" data-dtype="Number" />
-          </div>
-        </div>
-
-        <div class="resource flex-group-center">
-          <label for="system.wands" class="resource-label">Wands</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="number" name="system.wands" value="{{system.wands}}" data-dtype="Number" />
-          </div>
-        </div>
-
-      </div>
-
-      {{!-- Light --}}
-      <div class="resources grid grid-4col">
-
-        <div class="resource flex-group-center">
-          <label for="system.supplyresources.light" class="resource-label">Light</label>
-          <div class="resource-content flexrow flex-center flex-between">
-            <input type="checkbox" name="system.supplyresources.light.notched" {{isChecked system.supplyresources.light.notched}} />
-            <input type="number" name="system.supplyresources.light.flickers" value="{{system.supplyresources.light.flickers}}" data-dtype="Number" />
-          </div>
-        </div>
-      
-      </div>
-
-      {{!-- Status --}}
-      <div class="resource-content flexrow flex-center flex-between">
-
-        {{!-- Wounds --}}
+      {{!-- RIGHT SIDE: ATTRIBUTES --}}
+      <div class="resource flex-group-center">
         <div class="resources grid grid-4col">
 
           <div class="resource flex-group-center">
-            <label for="system.status.stressed" class="resource-label">Stressed</label>
+            <label for="system.swords" class="resource-label">Swords</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.stressed" {{isChecked system.status.stressed}} />
+              <input type="number" name="system.swords" value="{{system.swords}}" data-dtype="Number"/>
             </div>
           </div>
-          
+
           <div class="resource flex-group-center">
-            <label for="system.status.staggered" class="resource-label">Staggered</label>
+            <label for="system.pentacles" class="resource-label">Pentacles</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.staggered" {{isChecked system.status.staggered}} />
+              <input type="number" name="system.pentacles" value="{{system.pentacles}}" data-dtype="Number" />
             </div>
           </div>
-          
+
           <div class="resource flex-group-center">
-            <label for="system.status.injured" class="resource-label">Injured</label>
+            <label for="system.cups" class="resource-label">Cups</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.injured" {{isChecked system.status.injured}} />
+              <input type="number" name="system.cups" value="{{system.cups}}" data-dtype="Number" />
             </div>
           </div>
-          
+
           <div class="resource flex-group-center">
-            <label for="system.status.deathsdoor" class="resource-label">Death's Door</label>
+            <label for="system.wands" class="resource-label">Wands</label>
             <div class="resource-content flexrow flex-center flex-between">
-              <input type="checkbox" name="system.status.deathsdoor" {{isChecked system.status.deathsdoor}} />
+              <input type="number" name="system.wands" value="{{system.wands}}" data-dtype="Number" />
             </div>
           </div>
 
         </div>
-
-        {{!-- Resolve/Lore - TODO figure out if these should be multi-checkboxes --}}
-        <div class="resources grid grid-2col">
-        
-          <div class="resource flex-group-center">
-            <label for="system.status.resolve" class="resource-label">Resolve</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="number" name="system.status.resolve" value="{{system.status.resolve}}" data-dtype="Number" />
-            </div>
-          </div>
-        
-          <div class="resource flex-group-center">
-            <label for="system.status.lore" class="resource-label">Lore</label>
-            <div class="resource-content flexrow flex-center flex-between">
-              <input type="number" name="system.status.lore" value="{{system.status.lore}}" data-dtype="Number" />
-            </div>
-          </div>
-        
-        </div>
-
       </div>
     </div>
   </header>

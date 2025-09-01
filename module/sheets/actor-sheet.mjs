@@ -12,8 +12,8 @@ export class HisMajestyTheWormActorSheet extends ActorSheet {
   static get defaultOptions() {
     return foundry.utils.mergeObject(super.defaultOptions, {
       classes: ['hmtw-foundry', 'sheet', 'actor'],
-      width: 600,
-      height: 800,
+      width: 860,
+      height: 900,
       tabs: [
         {
           navSelector: '.sheet-tabs',
